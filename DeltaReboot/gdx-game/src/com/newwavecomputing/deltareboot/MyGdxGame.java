@@ -8,11 +8,13 @@ public class MyGdxGame implements ApplicationListener
 {
 	Texture texture;
 	SpriteBatch batch;
-
+	Texture ship;
+	
 	@Override
 	public void create()
 	{
 		texture = new Texture(Gdx.files.internal("android.jpg"));
+		ship = new Texture(Gdx.files.internal("trugreen.jpg"));
 		batch = new SpriteBatch();
 	}
 
@@ -24,6 +26,9 @@ public class MyGdxGame implements ApplicationListener
 		batch.begin();
 		batch.draw(texture, Gdx.graphics.getWidth() / 4, 0, 
 				   Gdx.graphics.getWidth() / 2, Gdx.graphics.getWidth() / 2);
+		batch.draw(ship, Gdx.graphics.getWidth() / 2, Gdx.graphics.getHeight()/2, 
+				   Gdx.graphics.getWidth() / 4, Gdx.graphics.getWidth() / 4);
+		
 		batch.end();
 	}
 
